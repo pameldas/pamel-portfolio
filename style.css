@@ -768,3 +768,13 @@ git add .
         font-size: 25px;
     }
 }
+
+/* Ensure social media icons are visible */
+
+.football-social-card .social-icon i {
+    display: inline-block;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    font-size: 23px;
+    line-height: 1;
+}
