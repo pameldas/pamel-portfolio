@@ -613,3 +613,158 @@ git add .
         font-size: 15px;
     }
 }
+
+/* Dedicated Football Page Heading */
+
+.football-page-heading {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin: 40px 0 30px;
+}
+
+.football-page-logo {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 15px;
+    border: 1px solid #dbe5f0;
+    background: white;
+    padding: 8px;
+    flex-shrink: 0;
+}
+
+.football-page-heading h1 {
+    font-size: 42px;
+    color: #14213d;
+    margin: 0 0 10px;
+}
+
+.football-page-heading p {
+    color: #1764cc;
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 600px) {
+    .football-page-heading {
+        gap: 15px;
+    }
+
+    .football-page-logo {
+        width: 75px;
+        height: 75px;
+    }
+
+    .football-page-heading h1 {
+        font-size: 26px;
+    }
+
+    .football-page-heading p {
+        font-size: 14px;
+    }
+}
+
+/* Football Social Media Section */
+
+.football-social-section {
+    margin-top: 65px;
+    margin-bottom: 70px;
+}
+
+.football-social-section h2 {
+    font-size: 30px;
+    color: #14213d;
+    margin: 12px 0;
+}
+
+.football-social-intro {
+    color: #64748b;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.football-social-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.football-social-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: #f8fbff;
+    border: 1px solid #dbe5f0;
+    border-radius: 12px;
+    color: #14213d;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.football-social-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(23, 100, 204, 0.14);
+}
+
+.social-icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    color: white;
+    font-size: 23px;
+    flex-shrink: 0;
+}
+
+/* Platform colors */
+
+.social-icon.facebook {
+    background: #1877f2;
+}
+
+.social-icon.instagram {
+    background: #c13584;
+}
+
+.social-icon.youtube {
+    background: #ff0033;
+}
+
+.social-icon.x-twitter,
+.social-icon.threads,
+.social-icon.tiktok {
+    background: #161616;
+}
+
+.social-icon.linkedin {
+    background: #0a66c2;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+    .football-social-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 500px) {
+    .football-social-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .football-social-section h2 {
+        font-size: 25px;
+    }
+}
