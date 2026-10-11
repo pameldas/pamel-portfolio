@@ -291,3 +291,90 @@ h1 {
     border: none;
     cursor: pointer;
 }
+
+/* Contact Section */
+
+#contact {
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 90px;
+}
+
+#contact h2 {
+    font-size: 38px;
+    color: #14213d;
+    margin-bottom: 20px;
+}
+
+.contact-description {
+    color: #64748b;
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 650px;
+    margin: 0 auto 35px;
+}
+
+.contact-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.contact-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 14px 25px;
+    min-width: 150px;
+
+    border: 2px solid #1764cc;
+    border-radius: 10px;
+
+    background: #ffffff;
+    color: #1764cc;
+
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+.contact-btn span {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.contact-btn:hover {
+    background: #1764cc;
+    color: #ffffff;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(23, 100, 204, 0.18);
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 600px) {
+    #contact {
+        padding-top: 50px;
+        padding-bottom: 60px;
+    }
+
+    #contact h2 {
+        font-size: 30px;
+    }
+
+    .contact-links {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .contact-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
