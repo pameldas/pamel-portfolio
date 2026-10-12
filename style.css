@@ -1854,6 +1854,11 @@ height: 470px;
         width: 46px;
         height: 46px;
         font-size: 21px;
+
+    transition: none;
+    will-change: transform, left, top;
+    backface-visibility: hidden;
+
     }
 }
 
@@ -1873,4 +1878,74 @@ height: 470px;
     .hero .orbit-item {
         will-change: auto;
     }
+}
+/* ==========================================
+   HERO PNG BOTTOM LINE — FULL RIGHT EXTENSION
+   ========================================== */
+
+/* Keep the portrait and line properly positioned */
+.hero .hero-3d-orbit {
+    position: relative;
+    overflow: visible;
+}
+
+/* Line starts beneath PNG and goes to screen edge */
+.hero .hero-3d-orbit::after {
+    content: "";
+    position: absolute;
+
+    /* Same bottom position as PNG */
+    bottom: 0;
+
+    /* Start at the center, underneath your PNG */
+    left: 50%;
+
+    /* Long enough to reach the right screen edge */
+    width: 100vw;
+
+    /* Line thickness */
+    height: 6px;
+
+    /* Gradient styling */
+    background: linear-gradient(
+        90deg,
+        #1764cc 0%,
+        #7543ec 60%,
+        #06b6d4 100%
+    );
+
+    border-radius: 0 8px 8px 0;
+
+    box-shadow: 0 4px 12px rgba(23, 100, 204, 0.20);
+
+    /* Behind your PNG */
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+/* Keep PNG on top of the line */
+.hero .hero-3d-orbit .orbit-person {
+    z-index: 3;
+    bottom: 0;
+}
+
+/* ==========================================
+   MOBILE VERSION
+   ========================================== */
+
+@media (max-width: 600px) {
+
+    .hero .hero-3d-orbit::after {
+        bottom: 0;
+        left: 50%;
+        width: 100vw;
+        height: 5px;
+    }
+
+}
+
+/* Hide horizontal overflow from extended line */
+body {
+    overflow-x: clip;
 }

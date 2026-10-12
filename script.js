@@ -339,21 +339,25 @@ document.addEventListener("DOMContentLoaded", () => {
             
 /* Smooth 3D depth and size transition */
 
+// Extra-smooth 3D depth animation
 const depth = Math.sin(theta);
 
-// Smooth scaling:
-// Back: 0.75x
-// Middle: 0.875x
-// Front: 1.00x
-const scale = 0.875 + 0.125 * depth;
+// Smoothstep curve for natural depth movement
+const t = (depth + 1) / 2;
+const smoothDepth = t * t * (3 - 2 * t);
 
-// Keep icons behind the portrait on the far side
-// and in front on the near side
+// Subtle scaling: 94% behind, 100% in front
+const scale = 0.94 + 0.06 * smoothDepth;
+
+// Maintain front/back layering
 icon.style.zIndex = depth >= 0 ? "6" : "2";
 
-// Gradually change size instead of jumping
+// Smoothly update the icon's size
 icon.style.transform =
-    `translate(-50%, -50%) scale(${scale})`;
+    `translate3d(-50%, -50%, 0) scale(${scale})`;
+
+// Keep opacity consistent
+icon.style.opacity = "1";
 
 // Optional: Slight fading when moving behind
 const opacity = 0.85 + 0.15 * ((depth + 1) / 2);
