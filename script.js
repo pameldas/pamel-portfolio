@@ -261,3 +261,110 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+/* ========================================
+   3D ORBIT ANIMATION AROUND PROFILE PHOTO
+   ======================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const orbit = document.querySelector(".hero-3d-orbit");
+
+    if (!orbit) return;
+
+    const icons = [...orbit.querySelectorAll(".orbit-item")];
+
+    if (!icons.length) return;
+
+    const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    );
+
+    let angle = 0;
+    let lastTime = null;
+    let paused = false;
+
+    orbit.addEventListener("mouseenter", () => {
+        paused = true;
+    });
+
+    orbit.addEventListener("mouseleave", () => {
+        if (!orbit.contains(document.activeElement)) {
+            paused = false;
+        }
+    });
+
+    orbit.addEventListener("focusin", () => {
+        paused = true;
+    });
+
+    orbit.addEventListener("focusout", () => {
+        requestAnimationFrame(() => {
+            paused = orbit.matches(":hover") ||
+                     orbit.contains(document.activeElement);
+        });
+    });
+
+    function animate(time) {
+
+        if (lastTime === null) lastTime = time;
+
+        const delta = Math.min(time - lastTime, 50);
+        lastTime = time;
+
+        const width = orbit.clientWidth;
+        const height = orbit.clientHeight;
+
+        const radiusX = width * 0.46;
+        const radiusY = height * 0.21;
+
+        if (!paused && !reducedMotion.matches) {
+            // One revolution every 18 seconds
+            angle += (delta / 18000) * Math.PI * 2;
+        }
+
+        icons.forEach((icon, index) => {
+
+            const theta = angle +
+                (index * Math.PI * 2 / icons.length);
+
+            const x = Math.cos(theta) * radiusX;
+            const y = Math.sin(theta) * radiusY;
+
+            icon.style.left = `calc(50% + ${x}px)`;
+            icon.style.top = `calc(55% + ${y}px)`;
+
+            // Negative sine = behind the portrait
+            // Positive sine = in front of the portrait
+            
+/* Smooth 3D depth and size transition */
+
+const depth = Math.sin(theta);
+
+// Smooth scaling:
+// Back: 0.75x
+// Middle: 0.875x
+// Front: 1.00x
+const scale = 0.875 + 0.125 * depth;
+
+// Keep icons behind the portrait on the far side
+// and in front on the near side
+icon.style.zIndex = depth >= 0 ? "6" : "2";
+
+// Gradually change size instead of jumping
+icon.style.transform =
+    `translate(-50%, -50%) scale(${scale})`;
+
+// Optional: Slight fading when moving behind
+const opacity = 0.85 + 0.15 * ((depth + 1) / 2);
+
+icon.style.opacity = opacity;
+
+        });
+
+        requestAnimationFrame(animate);
+    }
+
+    requestAnimationFrame(animate);
+
+});

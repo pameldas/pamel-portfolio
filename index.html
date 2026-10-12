@@ -38,33 +38,37 @@
         </p>
 
         
-<!-- Hero Action Buttons -->
 
-<div class="hero-actions">
 
-    <a href="#research" class="btn btn-primary">
-        Explore My Research
-    </a>
-
-    <a href="#courses" class="btn btn-outline">
-        Certifications
-    </a>
-
-    <a href="football.html" class="btn btn-outline">
-        Leadership & Activities
-    </a>
-
-    <a href="#contact" class="btn btn-outline">
-        Contact Me
-    </a>
-
+    <!-- Orbiting navigation icons -->
 </div>
 
       </div>
 
       <div class="hero-image">
-        <img src="Images/profile.jpg" alt="Portrait of Pamel Das">
-      </div>
+    <div class="hero-3d-orbit">
+
+        <!-- Rear half of the orbit -->
+        <div class="orbit-back"></div>
+
+        <!-- Your transparent portrait -->
+        <img src="Images/profile.png"
+             class="orbit-person"
+             alt="Pamel Das">
+
+        <!-- Front half of the orbit -->
+        <div class="orbit-front"></div>
+
+        <!-- Moving navigation buttons -->
+        <nav class="orbit-buttons" aria-label="Portfolio shortcuts">
+            <a href="#research" class="orbit-item" aria-label="Research" title="Research">🔬</a>
+            <a href="#courses" class="orbit-item" aria-label="Certifications" title="Certifications">🎓</a>
+            <a href="football.html" class="orbit-item" aria-label="Leadership and Activities" title="Leadership and Activities">🏆</a>
+            <a href="#contact" class="orbit-item" aria-label="Contact" title="Contact">✉️</a>
+        </nav>
+
+    </div>
+</div>
     </section>
 
     <section id="about" class="section tinted">
