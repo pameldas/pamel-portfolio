@@ -1949,3 +1949,215 @@ height: 470px;
 body {
     overflow-x: clip;
 }
+/* ==========================================
+   EDUCATION - HORIZONTAL THREE CARD LAYOUT
+   ========================================== */
+
+.education-section {
+    padding: 85px 0;
+    background: linear-gradient(
+        135deg,
+        #f4f8ff 0%,
+        #f8f5ff 100%
+    );
+    scroll-margin-top: 90px;
+}
+
+.education-section .container {
+    width: min(1150px, calc(100% - 40px));
+    max-width: 1150px;
+}
+
+.education-section h2 {
+    color: #14213d;
+    margin-bottom: 16px;
+}
+
+.education-intro {
+    max-width: 700px;
+    color: #64748b;
+    line-height: 1.8;
+    margin-bottom: 38px;
+}
+
+/* THREE CARDS SIDE BY SIDE */
+
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    align-items: stretch;
+}
+
+/* INDIVIDUAL CARD */
+
+.education-box {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: 100%;
+
+    padding: 26px 22px;
+
+    background: #ffffff;
+    border: 1px solid #dbe5f0;
+    border-top: 4px solid #1764cc;
+    border-radius: 16px;
+
+    box-shadow: 0 6px 24px rgba(23, 100, 204, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.education-box:nth-child(2) {
+    border-top-color: #7543ec;
+}
+
+.education-box:nth-child(3) {
+    border-top-color: #06b6d4;
+}
+
+.education-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 32px rgba(23, 100, 204, 0.13);
+}
+
+/* DEGREE LABEL */
+
+.education-level {
+    display: inline-block;
+    align-self: flex-start;
+
+    padding: 7px 13px;
+    margin-bottom: 22px;
+
+    background: #e8f0ff;
+    color: #1764cc;
+
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    border-radius: 7px;
+}
+
+/* LOGO BESIDE INSTITUTION NAME */
+
+.education-school {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    min-height: 90px;
+    margin-bottom: 18px;
+}
+
+.education-school-logo {
+    display: block;
+    flex-shrink: 0;
+
+    width: 68px;
+    height: 68px;
+
+    object-fit: contain;
+    background: #ffffff;
+    padding: 6px;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+}
+
+.education-school h3 {
+    margin: 0;
+    min-width: 0;
+
+    font-size: 17px;
+    line-height: 1.4;
+    letter-spacing: -0.2px;
+    color: #14213d;
+}
+
+/* DEGREE DESCRIPTION */
+
+.education-program {
+    color: #58677d;
+    font-size: 14px !important;
+    line-height: 1.7;
+
+    margin: 0 0 22px;
+}
+
+/* YEAR AND GPA AT BOTTOM */
+
+.education-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid #e7ecf3;
+}
+
+.education-details div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+}
+
+.education-details span {
+    color: #64748b;
+    font-size: 12px;
+}
+
+.education-details strong {
+    color: #1764cc;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+/* TABLET */
+
+@media (max-width: 950px) {
+    .education-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+    .education-section {
+        padding: 60px 0;
+    }
+
+    .education-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .education-box {
+        padding: 24px 20px;
+    }
+
+    .education-school {
+        min-height: 0;
+    }
+
+    .education-school-logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .education-school h3 {
+        font-size: 17px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .education-box {
+        transition: none;
+    }
+}
