@@ -55,3 +55,28 @@ document.addEventListener("keydown", function(event) {
     }
 });
 
+/* Courses & Certifications Show More */
+
+const coursesSection = document.getElementById("courses");
+const toggleCourses = document.getElementById("toggleCourses");
+
+if (coursesSection && toggleCourses) {
+
+    toggleCourses.addEventListener("click", function () {
+
+        const expanded =
+            coursesSection.classList.toggle("courses-expanded");
+
+        toggleCourses.textContent = expanded
+            ? "Show Less ↑"
+            : "Show All 12 Certificates ↓";
+
+        toggleCourses.setAttribute(
+            "aria-expanded",
+            String(expanded)
+        );
+
+    });
+
+}
+
