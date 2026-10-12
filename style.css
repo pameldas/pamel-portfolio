@@ -1272,3 +1272,64 @@ git add .
     object-fit: cover;
     display: block;
 }
+
+/* Recognition Coverage Details */
+
+.football-page .recognition-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.football-page .recognition-date {
+    color: #64748b;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.football-page .recognition-description {
+    color: #475569;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.football-page .recognition-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+    margin-top: 16px;
+    color: #1764cc;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.football-page .recognition-link:hover {
+    text-decoration: underline;
+}
+
+/* Make About Me section wider */
+
+#about.container {
+    width: 94%;
+    max-width: 1450px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Allow paragraphs to use the available width */
+
+#about p:not(.eyebrow) {
+    max-width: 100%;
+}
+
+/* Mobile responsive */
+
+@media (max-width: 768px) {
+    #about.container {
+        width: 92%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
