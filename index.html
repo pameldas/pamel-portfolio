@@ -582,6 +582,41 @@ Beyond my academic coursework, I have contributed to four research papers presen
     <div class="container"><span>© <span id="year"></span> Pamel Das</span><span>Built with HTML, CSS &
         JavaScript</span></div>
   </footer>
+
+<!-- Online Course Certificate Popup -->
+
+<div id="course-certificate-modal"
+     class="course-certificate-modal"
+     role="dialog"
+     aria-modal="true"
+     aria-label="Course Certificate Preview"
+     aria-hidden="true">
+
+    <button
+        id="close-course-certificate"
+        class="close-course-certificate"
+        type="button"
+        aria-label="Close certificate">
+        &times;
+    </button>
+
+    <div class="course-modal-content">
+
+        <iframe
+            id="course-pdf-viewer"
+            title="Course PDF Certificate"
+            style="display: none;">
+        </iframe>
+
+        <img
+            id="course-image-viewer"
+            alt="Course Certificate"
+            style="display: none;">
+
+    </div>
+
+</div>
+
 </body>
 
 </html>
